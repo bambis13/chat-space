@@ -1,4 +1,3 @@
-#README
 
 ## userテーブル
 
@@ -12,6 +11,7 @@
 add_index :name
 
 belongs_to member
+
 has_many messages
 
 
@@ -23,6 +23,7 @@ has_many messages
 |user_id|string|null: false, foreign_key: true|
 
 belongs_to group
+
 has_many users
 
 ## messageテーブル
@@ -36,6 +37,7 @@ has_many users
 |group_id|integer|null: false, foreign_key: true|
 
 belongs_to user
+
 belongs_to group
 
 ## groupテーブル
@@ -47,6 +49,7 @@ belongs_to group
 
 
 has_many members
+
 has_many messages
 
 
