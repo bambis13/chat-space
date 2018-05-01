@@ -6,11 +6,12 @@
 |name|string||
 
 
-add_index :name
+- add_index :name
 
-belongs_to member
+- belongs_to member
 
-has_many messages
+- has_many messages
+
 
 
 
@@ -20,9 +21,11 @@ has_many messages
 |group_id|string|null: false, foreign_key: true|
 |user_id|string|null: false, foreign_key: true|
 
-belongs_to group
+- belongs_to group
 
-has_many users
+- has_many users
+
+
 
 ## messageテーブル
 |Column|Type|Options|
@@ -33,9 +36,11 @@ has_many users
 |user_id|integer|null: false, foreign_key: true |
 |group_id|integer|null: false, foreign_key: true|
 
-belongs_to user
+- belongs_to user
 
-belongs_to group
+- belongs_to group
+
+
 
 ## groupテーブル
 |Column|Type|Options|
@@ -44,8 +49,8 @@ belongs_to group
 |owner|integer|null: false, foreign_key: true|
 
 
-has_many members
+- has_many members
 
-has_many messages
+- has_many messages
 
 
