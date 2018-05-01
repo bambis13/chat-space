@@ -3,10 +3,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string||
-|email|text|null: false, unique: true|
-|password|text|null: false|
+
 
 add_index :name
 
@@ -29,7 +27,6 @@ has_many users
 ## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |text|text| |
 |image|text| |
 |created_at|timestamp|null: false|
@@ -43,7 +40,6 @@ belongs_to group
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string|null: false|
 |owner|integer|null: false, foreign_key: true|
 
