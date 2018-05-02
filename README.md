@@ -44,7 +44,7 @@
 
 - has_many messages
 
-- has_many users, through: member
+- has_many users, through: members
 
 
 
