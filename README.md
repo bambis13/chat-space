@@ -36,7 +36,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|owner|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -55,8 +54,8 @@
 |text|text| |
 |image|text| |
 |created_at|timestamp|null: false|
-|user_id|integer|null: false, foreign_key: true |
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true |
+|group_id|references|null: false, foreign_key: true|
 
 
 ### Association
