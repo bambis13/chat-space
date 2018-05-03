@@ -1,0 +1,36 @@
+.form{
+
+    &__text-field{
+      font-size: 16px;
+      background-color: $white;
+      color: $black;
+      height: 50px;
+      width: calc(100% - 145px);
+      padding: 0 45px 0 20px;
+      float: left;
+      border: none;
+    }
+    &__image-label{
+      height: 50px;
+      width: 40px;
+      z-index: 0;
+      position: absolute;
+      bottom: 20px;
+      right: 120px;
+      padding: auto;
+      text-align: center;
+
+      .image-icon{
+        color: $black;
+        line-height: 50px;
+      }
+    }
+    &__submit{
+      height: 50px;
+      width: 80px;
+      color: $white;
+      float: right;
+      background-color:  $light-blue;
+      border: none;
+    }
+}
