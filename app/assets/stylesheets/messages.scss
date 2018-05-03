@@ -1,3 +1,74 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./reset";
+
+.side-block{
+  width: 300px;
+  background-color: #2f3e51
+
+}
+
+
+a.group-name{
+  font-size: 16px;
+  color: #FFFFFF;
+  font-style: bold;
+  background-color: #253141;
+}
+
+p.name{
+size: 16px;
+color: #434A54
+font-style: bold;
+}
+
+p.text{
+size: 14px;
+color: #434A54
+}
+
+h4{
+
+}
+
+ul.group-lists{
+  padding: 20px 0 40px 0;
+
+}
+
+li{
+ line-height: 5px;
+}
+
+h5{
+ font-size: 15px;
+}
+
+h6{
+ font-size: 11px;
+}
+
+header{
+
+}
+
+.contents{
+height
+width:100vw-300px;
+background-color: #AAAAAA
+}
+
+.chat-space{
+
+}
+
+.message-bar{
+padding:20px 0
+height: 50px;
+}
+
+.message-input{
+font-size: 16px;
+}
+
+.message-button{
+
+}

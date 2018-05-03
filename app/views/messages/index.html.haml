@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    .notice
+      %a チャットグループが作成されました。
+    .body
+      .side-block
+        = render partial: "messages/side-block"
+      .contents
+        .contents-header
+          = render partial: "messages/header"
+        .border
+        .contents-message
+          = render partial: "messages/message"
+        .contents-form
+          = render partial: "messages/form"
+
