@@ -23,6 +23,7 @@ h4{
 
 .contents-form{
     height: 50px;
+    width: calc(100% - 380px);
     padding: 20px 40px;
     background-color: $form-gray;
     position: absolute;
