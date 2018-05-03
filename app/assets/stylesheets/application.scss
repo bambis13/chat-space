@@ -8,8 +8,6 @@
 @import "./form";
 
 
-
-
 .body{
   height: 100vh;
 }
@@ -19,10 +17,6 @@
   clear: both;
   margin-bottom: 6px;
   }
-
-h4{
-  size:16px;
-}
 
 i{
   color: $white;
@@ -39,76 +33,18 @@ i{
 
 .contents-message{
   padding-top: 100px;
-  padding-bottom: 90px;
 }
-
-// ul.group-lists{
-//   padding: 20px 0 40px 0;
-//   list-style: none;
-
-//   li{
-//    line-height: 5px;
-//  }
-// }
-
-
-
-// h5{
-//  font-size: 15px;
-// }
-
-// h6{
-//  font-size: 11px;
-// }
-
-// header{
-
-// }
 
 .contents{
   height: 100vh;
   width: calc(100vw - 300px);
   background-color: $back-gray;
+  padding-bottom: 90px;
   float: right;
-  overflow:auto;
+  overflow-y:scroll;
 }
 
-.icon{
-  color: $white;
-  size: 16px;
-  float: right;
 
-}
-
-// .contents-header{
-//   height: 40px;
-//   padding:28px 0;
-//   size: 20px;
-//   font-color: #333333;
-//   background-color: #AAAAAA;
-//   p.name{
-//     size: 16px;
-//     color: #434A54;
-//   }
-
-//   p.text{
-//     size: 14px;
-//     color: #434A54;
-//   }
-// }
-
-// .contents-form{
-//   padding: 20px 0;
-//   height: 50px;
-// }
-
-// .message-input{
-//   font-size: 16px;
-// }
-
-// .message-button{
-
-// }
 
 
 

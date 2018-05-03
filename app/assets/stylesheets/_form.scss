@@ -5,15 +5,14 @@
       background-color: $white;
       color: $black;
       height: 50px;
-      width: calc(100% - 115px);
-      padding: 0 10px;
+      width: calc(100% - 145px);
+      padding: 0 45px 0 20px;
       float: left;
       border: none;
     }
     &__image-label{
       height: 50px;
-      width: 50px;
-      background-color: $white;
+      width: 40px;
       z-index: 0;
       position: absolute;
       bottom: 20px;
@@ -31,7 +30,6 @@
       width: 80px;
       color: $white;
       float: right;
-      margin-left: 15px;
       background-color:  $light-blue;
       border: none;
     }

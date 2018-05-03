@@ -3,10 +3,12 @@
   height: 100px;
   background-color: white;
   padding:0 40px;
+  min-width: 600px;
   position: fixed;
   top: 0;
   right:0;
   left:300px;
+  z-index: 1;
   .contents-header-left{
     float: left;
     &__name{
