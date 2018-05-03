@@ -6,23 +6,25 @@
 @import "./message";
 @import "./form";
 @import "./user";
+@import "./flash";
 
-.notice{
-  width: 100vw;
-  height: 30px;
-  background-color: $light-blue;
-  z-index:3;
-  position: fixed;
-  top:0; 
-  font-size: 16px;
-  color: $white;
-  text-align: center;
-  line-height: 30px;
-}
+
+
+// .notice{
+//   width: 100vw;
+//   height: 30px;
+//   background-color: $light-blue;
+//   z-index:3;
+//   position: fixed;
+//   top:0; 
+//   font-size: 16px;
+//   color: $white;
+//   text-align: center;
+//   line-height: 30px;
+// }
 
 .body{
   height: 100vh;
-  padding-top: 30px;
 }
 
 .side-block{
@@ -47,10 +49,8 @@
   padding:0 40px;
   min-width: 600px;
   position: fixed;
-  top: 30px;
   right:0;
   left:300px;
-  z-index: 1;
 }
 
 .contents-message{

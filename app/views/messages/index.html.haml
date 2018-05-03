@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    .notice
-      %a チャットグループが作成されました。
     .body
+      .notice
+        = render partial: "messages/flash"
       .side-block
         = render partial: "messages/side-block"
       .contents
