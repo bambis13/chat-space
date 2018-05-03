@@ -1,7 +1,13 @@
 .side-block
   .user
-    %h4.user__name
+    .user__name
       = "あかり"
+    .user__create-room
+      = link_to "/messages", class: "icon fa-lg" do
+        %i.fa.fa-pencil-square-o
+    .user__edit-account
+      = link_to "/messages", class: "icon fa-lg" do
+        %i.fa.fa-cog
 
   .groups
     .groups__name

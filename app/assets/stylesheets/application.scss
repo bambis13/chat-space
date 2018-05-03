@@ -1,3 +1,5 @@
+
+@import "font-awesome";
 @import "./reset";
 @import "./variable";
 @import "./side-block";
@@ -22,6 +24,9 @@ h4{
   size:16px;
 }
 
+i{
+  color: $white;
+}
 .contents-form{
     height: 50px;
     width: calc(100% - 380px);
@@ -66,6 +71,13 @@ h4{
   background-color: $back-gray;
   float: right;
   overflow:auto;
+}
+
+.icon{
+  color: $white;
+  size: 16px;
+  float: right;
+
 }
 
 // .contents-header{
