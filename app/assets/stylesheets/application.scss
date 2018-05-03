@@ -2,21 +2,32 @@
 @import "./variable";
 @import "./side-block";
 @import "./header";
+@import "./message";
+@import "./form";
+
 
 
 
 .body{
   height: 100vh;
-  display: flex;
 }
 
 .border{
   border-bottom: solid 2px #eeeeee;
-  border-top-width: 100%;
+  clear: both;
   }
 
 h4{
   size:16px;
+}
+
+.contents-form{
+    height: 50px;
+    padding: 20px 40px;
+    background-color: $form-gray;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 // ul.group-lists{

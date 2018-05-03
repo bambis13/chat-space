@@ -1,7 +1,6 @@
 
 .contents-header{
   height: 100px;
-  width: calc(100vw - 300px);
   background-color: white;
   padding:0 40px;
   .contents-header-left{
@@ -16,7 +15,6 @@
     &__text{
       color: $font-gray;
       font-size: 12px;
-      float: left;
     }
   }
   .contents-header-right{

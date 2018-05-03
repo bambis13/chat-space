@@ -1,7 +1,3 @@
-
-.form-bar
-
-.input-bar
-      %form{:action => "/", :method => "post"}
-      %input{:name => "message"}
-      %input{:type => "submit", :value => "send"}
+.form
+  %input.form__text-field{:name => "text", :placeholder => "type in something!", :action => "/message", :method => "post"}
+  %input.form__submit{:type => "submit", :value => "send"}
