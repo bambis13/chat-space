@@ -1,3 +1,6 @@
 .form
-  %input.form__text-field{:name => "text", :placeholder => "type in something!", :action => "/message", :method => "post"}
-  %input.form__submit{:type => "submit", :value => "send"}
+  %input.form__text-field(name = "text" placeholder = "type in something!" action = "/message" method = "post")
+  %label.form__image-label
+    %input.form__image(type="file" name="image" style="display:none;")
+    %i.fa.fa-image(class="image-icon fa-lg")
+  %input.form__submit(type = "submit" value = "send")
