@@ -7,6 +7,7 @@
 @import "./form";
 @import "./user";
 @import "./flash";
+@import "./groups";
 
 
 
@@ -33,6 +34,7 @@
   background-color: #2f3e51;
   position: fixed;
   left: 0;
+  overflow-y: scroll;
 }
 
 .contents{

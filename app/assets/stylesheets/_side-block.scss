@@ -1,7 +1,10 @@
 .user{
   height: 100px;
+  width: 260px;
   background-color: #253141;
   padding: 0 20px;
+  position: fixed;
+  left: 0px;
   &__name{
     color: $white;
     font-size: 16px;
@@ -17,15 +20,17 @@
   }
 
 }
-
 .groups{
-  padding: 40px 20px;
-  color: $white;
-  &__name{
-    font-size: 15px;
-    padding-bottom: 5px;
-  }
-  &__text{
-    font-size: 11px;
+    margin-top: 100px;
+  .group{
+    padding: 40px 20px;
+    color: $white;
+    &__name{
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
+    &__text{
+      font-size: 11px;
+    }
   }
 }
