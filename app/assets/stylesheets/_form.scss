@@ -19,12 +19,10 @@
       right: 120px;
       padding: auto;
       text-align: center;
-      display: none;
-
-      .image-icon{
+    }
+    .image-icon{
         color: $black;
         line-height: 50px;
-      }
     }
     &__submit{
       height: 50px;

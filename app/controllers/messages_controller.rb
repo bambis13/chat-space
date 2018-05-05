@@ -1,9 +1,8 @@
 class MessagesController < ApplicationController
-  before_action :set_group, only: :create
-
+  before_action :set_group
+  
 	def index
-    # @group = Group.new
-    @message = Messege.new
+    @message = Message.new
     @messages = @group.messages.includes(:user)
 	end
 

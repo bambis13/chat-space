@@ -3,11 +3,9 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    render template: "messages/index" 
   end
 
   def new    
-    @group = Group.new
   end
 
   def edit
