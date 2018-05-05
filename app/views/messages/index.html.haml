@@ -8,9 +8,9 @@
         = render partial: "messages/side-block"
       .contents
         .contents-header
-          = render partial: "messages/header"
+          = render partial: 'messages/header', collection: @members
         .border
         .contents-message
-          = render partial: "messages/message"
+          = render partial: 'message', collection: @messages
         .contents-form
           = render partial: "messages/form"

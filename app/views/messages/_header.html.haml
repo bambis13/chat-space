@@ -1,10 +1,12 @@
 .contents-header
   .contents-header-left
     .contents-header-left__name
-      = "Sampleグループ"
+      = @group.name
 
     .contents-header-left__text
-      = "メンバーの名前"
+      = "Member :"
+      - @members.each do |member|
+        = member.user[:name]
  
   .contents-header-right
     .contents-header-right__edit

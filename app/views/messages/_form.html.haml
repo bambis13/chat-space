@@ -1,13 +1,8 @@
 .form
-  / = form_for [@group, @message] do |f|
-  /   = f.text_field :text, class: 'form__text-field', placeholder: 'type in something!'
-  /   .form_image-label
-  /     = f.label :image, class: 'form__image-label' do
-  /       = fa_icon 'picture-o', class: 'image-icon fa-lg'
-  /       = f.file_field :image, class: ''
-  /   = f.submit 'Send', class: 'form_submit'
-  %input.form__text-field(name = "text" placeholder = "type in something!" action = "/message" method = "post")
-  %label.form__image-label
-    %i.fa.fa-image(class="image-icon fa-lg")
-    %input.form__image(type="file" name="image" style="display:none;")
-  %input.form__submit(type = "submit" value = "send")
+  = form_for [@group, @message] do |f|
+    = f.text_field :text, class: 'form__text-field', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'form__image-label' do
+        = fa_icon 'picture-o', class: 'image-icon fa-lg'
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
