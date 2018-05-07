@@ -32,7 +32,7 @@
   height: 100vh;
   width: 300px;
   background-color: #2f3e51;
-  position: fixed;
+  position: absolute;
   left: 0;
   overflow-y: scroll;
 }
@@ -49,15 +49,15 @@
   height: 100px;
   background-color: $white;
   padding:0 40px;
-  min-width: 600px;
-  position: fixed;
+  min-width: 500px;
+  position: absolute;
   right:0;
   left:300px;
 }
 
 .contents-message{
   padding-top: 130px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 
 .contents-form{
@@ -65,7 +65,7 @@
     width: calc(100% - 380px);
     padding: 20px 40px;
     background-color: $form-gray;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 0;
 }

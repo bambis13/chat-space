@@ -1,9 +1,9 @@
 !!!
 %html
   %head
+    %header
+      = render partial: "messages/flash"
     .body
-      .notice
-        = render partial: "messages/flash"
       .side-block
         = render partial: "messages/side-block"
       .contents
