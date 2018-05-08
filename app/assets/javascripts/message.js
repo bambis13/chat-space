@@ -2,7 +2,7 @@ $(function() {
 
   function buildHTML(message){
 
-    var html = `<div class='message'>
+    var html = `<div class='message' id='latest-message'>
                   <div class='upper-message'>
                     <div class='message__name'>
                     ${message.name}
@@ -15,23 +15,9 @@ $(function() {
                     <div class='message__text'>
                     ${message.text}
                     </div>
-
+                    <img class="message__image" src=${message.image} alt="">
                   </div>
                 </div>`
-
-//     if(message.text !== nil &message.image present?){html.append('<div class='lower-message'>
-// <div class='message__text'>
-
-// </div>
-
-// </div>')
-//     }elseif(message.text.present?){
-
-//     }elseif(message.image.present?){
-
-//     }else{
-
-//     }
     return html;
   }
 
@@ -41,8 +27,6 @@ $(function() {
     var url = $(this).attr('action');
     // console.log(this)
     // console.log(url)
-    // textField = $('.form__text-field');
-    // text = textField.val();
     $.ajax({
       url: url,
       type: 'POST',
@@ -53,13 +37,12 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      // console.log(html)
-      $('.contents-message').append(html)
-      // $('.text_field').val('')
+      $('.contents-message').append(html);
+      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
     })
-    // .fail(function(){
-    //   alert('error!');
-    // })
+    .fail(function(){
+      alert('error!');
+    })
   });
 });
 
