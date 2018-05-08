@@ -1,0 +1,21 @@
+<div class="message">
+
+  <div class="upper-message">
+    <div class="message__name">
+      ${message.user.name}
+      </div>
+    <div class="message__date">
+      ${message.updated_at}
+    </div>
+  </div>
+
+  <div class="lower-message>
+    <%if message.text.present?%>
+      <div class="message__text">
+        ${message.text}
+      </div>
+      <div class="message__image">
+    <img ${message.image.url}, class: 'message__image' >
+      </div>
+  </div>
+</div>
