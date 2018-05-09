@@ -2,7 +2,7 @@ $(function(){
 
   function buildHTML(message){
 
-    var html =
+    var html_head =
                `<div class='message' id='latest-message'>
                   <div class='upper-message'>
                     <div class='message__name'>
@@ -11,32 +11,19 @@ $(function(){
                     <div class='message__date'>
                       ${message.created_at}
                     </div>
-                  </div>`
-
-    var html_text =
-                   `<div class='lower-message'>
-                      <div class='message__text'>
-                        ${message.text}
-                      </div>
-                     </div>`
+                  </div>
+                  <div class='lower-message'>
+                    <div class='message__text'>
+                      ${message.text}
+                    </div>`
 
     var html_image =
-                     `<div class='lower-message'>
-                        <div class='message__image'></div>
-                          <img src="${message.image.url}" alt=" ">
-                        </div>
+                     `<div class='message__image'></div>
+                        <img src="${message.image.url}" alt=" ">
                       </div>`
-    if(message.text && message.image.url){
-      html = $(html).append(html_text + html_image + `</div>`)
-    } else if(message.image.url == null && message.text[0]){
-      html = $(html).append(html_text + `</div>`)
-    } else if(!message.text[0] && message.image.url){
-      html = $(html).append(html_image + `</div>`)
-    } else {
-      html = $(html).append(
-                            `<p>エラー！</p>
-                          </div>`)
-    }
+
+    html = (message.image.url) ? html = $(html_head).append(html_image + `</div></div>`) : html = $(html_head).append(`</div></div>`)
+
     return html;
   }
 
@@ -55,8 +42,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.contents-message').append(html);
-      $('.form__text-field').val("");
-      $('.upload_image').val("");
+      $('form')[0].reset();
       $('.form__submit').prop("disabled", false);
       $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
     })
