@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %header
+      = render partial: "messages/flash"
+      .contents-header
+        .right-wrapper
+          = render partial: "messages/head-right"
+        .left-wrapper
+          = render partial: "messages/head-left"
+      .body
+        .right-wrapper
+        .left-wrapper
+
+      .contents-footer
+      .right-wrapper
+
+        .contents-headers
+          = render partial: 'messages/header', collection: @members
+        .border
+        .contents-message
+          = render partial: 'message', collection: @messages
+        .contents-form
+          = render partial: "messages/form"
+        .left-wrapper
