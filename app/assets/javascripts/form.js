@@ -38,7 +38,9 @@ $(function() {
   });
 
   $("#user-search-result").on('click','.user-search-add',function(){
-      console.log("OK");
+      console.log(this);
+    $(this).parent().slideUp();
+    
   });
 
 });
