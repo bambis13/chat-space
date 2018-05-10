@@ -7,8 +7,20 @@ $(function() {
 　　　　　　　　　  <p class="chat-group-user__name">${user.name}</p>
   　　　　　　　　　<a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=" ${user.id} " data-user-name="${user.name}">追加</a>
 　　　　　　　　　</div>`
-    console.log(user.name)
     search_list.append(html);
+  }
+
+  function appendNoUser() {
+    var html = `<div class="chat-group-user clearfix">一致するユーザーはいません</div>`
+    search_list.append(html);
+  }
+
+  function appendUserList(user){
+`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  <input name='group[user_ids][]' type='hidden' value='ユーザーのid'>
+  <p class='chat-group-user__name'>ユーザー名</p>
+  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+</div>`
   }
 
   $("#user-search-field").on('keyup', function() {
@@ -29,7 +41,7 @@ $(function() {
       }
       else {
         $("#user-search-result").empty();
-        appendUser("一致するユーザーはいません");
+        appendNoUser();
       }
     })
     .fail(function() {
@@ -40,7 +52,7 @@ $(function() {
   $("#user-search-result").on('click','.user-search-add',function(){
       console.log(this);
     $(this).parent().slideUp();
-    
+
   });
 
 });
