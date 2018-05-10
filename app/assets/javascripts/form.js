@@ -11,8 +11,7 @@ $(function() {
     search_list.append(html);
   }
 
-
-  $("#user-search-field").on("keyup", function() {
+  $("#user-search-field").on('keyup', function() {
     var input = $("#user-search-field").val();
     $.ajax({
       type: 'GET',
@@ -37,4 +36,9 @@ $(function() {
       alert('ユーザー検索に失敗しました');
     })
   });
+
+  $("#user-search-result").on('click','.user-search-add',function(){
+      console.log("OK");
+  });
+
 });
