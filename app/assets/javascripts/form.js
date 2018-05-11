@@ -1,11 +1,7 @@
 $(function() {
 
   var search_list = $("#user-search-result");
-  var group_user_list = 
-
-  function editGroupUser(){
-
-  }
+  var group_user_list = $("#chat-group-user")
 
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -20,12 +16,13 @@ $(function() {
     search_list.append(html);
   }
 
-  function appendUserList(user){
-`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-  <input name='group[user_ids][]' type='hidden' value=" ${user.id} ">
-  <p class='chat-group-user__name'>${user.name}</p>
+  function appendUserList(id, name){
+    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  <input name='group[user_ids][]' type='hidden' value=" ${id} ">
+  <p class='chat-group-user__name'>${name}</p>
   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
 </div>`
+    group_user_list.append(html);
   }
 
   $("#user-search-field").on('keyup', function() {
@@ -55,15 +52,19 @@ $(function() {
   });
 
   $("#user-search-result").on('click','.user-search-add',function(){
-    $(this).parent().sildeUp();
-    var userData = $(this).val();
-    console.log(userData);
-    editGroupUser(userData);
+    $(this).parent().remove();
+    var userId = $(this).data('user-id');
+    var userName = $(this).data('user-name');
+    appendUserList(userId, userName);
   });
 
   $("#chat-group-user-8 a").on('click',function(){
       user_id = $(this).prev('input:hidden[name="group[user_ids][]"]').val();
-      console.log(user_id)
+    $(this).parent().remove();
+  });
+
+  $(document).on('click','.user-search-remove',function(){
+      user_id = $(this).prev('input:hidden[name="group[user_ids][]"]').val();
     $(this).parent().remove();
   });
 
