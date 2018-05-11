@@ -32,7 +32,7 @@ $(function() {
     })
 
     .done(function(users) {
-      $("#user-search-result").empty();
+    $("#user-search-result").empty();
       insertHTML = NoUserHTML;
       if (users.length !== 0) {
         insertHTML = '';
