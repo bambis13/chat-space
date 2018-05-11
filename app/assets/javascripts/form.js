@@ -1,6 +1,11 @@
 $(function() {
 
   var search_list = $("#user-search-result");
+  var group_user_list = 
+
+  function editGroupUser(){
+
+  }
 
   function appendUser(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -17,8 +22,8 @@ $(function() {
 
   function appendUserList(user){
 `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-  <input name='group[user_ids][]' type='hidden' value='ユーザーのid'>
-  <p class='chat-group-user__name'>ユーザー名</p>
+  <input name='group[user_ids][]' type='hidden' value=" ${user.id} ">
+  <p class='chat-group-user__name'>${user.name}</p>
   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
 </div>`
   }
@@ -50,12 +55,16 @@ $(function() {
   });
 
   $("#user-search-result").on('click','.user-search-add',function(){
-    $(this).parent().slideUp();
+    $(this).parent().sildeUp();
+    var userData = $(this).val();
+    console.log(userData);
+    editGroupUser(userData);
   });
 
   $("#chat-group-user-8 a").on('click',function(){
-      user_id = $(this).prev('input:hidden[name="group"]').val();
-    $(this).parent().slideUp();
+      user_id = $(this).prev('input:hidden[name="group[user_ids][]"]').val();
+      console.log(user_id)
+    $(this).parent().remove();
   });
 
 });
