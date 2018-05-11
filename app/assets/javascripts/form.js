@@ -50,9 +50,12 @@ $(function() {
   });
 
   $("#user-search-result").on('click','.user-search-add',function(){
-      console.log(this);
     $(this).parent().slideUp();
+  });
 
+  $("#chat-group-user-8 a").on('click',function(){
+      user_id = $(this).prev('input:hidden[name="group"]').val();
+    $(this).parent().slideUp();
   });
 
 });
