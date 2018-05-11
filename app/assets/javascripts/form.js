@@ -33,6 +33,7 @@ $(function() {
 
     .done(function(users) {
     $("#user-search-result").empty();
+    ids = $(":hidden[user_ids]")
       insertHTML = NoUserHTML;
       if (users.length !== 0) {
         insertHTML = '';
