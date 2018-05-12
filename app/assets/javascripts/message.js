@@ -16,7 +16,6 @@ $(function(){
                     <div class='message__text'>
                       ${message.text}
                     </div>`
-
     var html_image =
                      `<div class='message__image'></div>
                         <img src="${message.image.url}" alt=" ">

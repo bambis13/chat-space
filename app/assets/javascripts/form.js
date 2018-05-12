@@ -1,7 +1,7 @@
 $(function() {
 
   var search_list = $("#user-search-result");
-  var group_user_list = $("#chat-group-user");
+  var group_user_list = $("#chat-group-user-add");
 
   function BuildUserHTML(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -33,7 +33,6 @@ $(function() {
 
     .done(function(users) {
     $("#user-search-result").empty();
-    ids = $(":hidden[user_ids]")
       insertHTML = NoUserHTML;
       if (users.length !== 0) {
         insertHTML = '';
