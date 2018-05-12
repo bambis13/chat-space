@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @members = @group.members.includes(:user)
+    @users = @group.users
   end
 
   def create
