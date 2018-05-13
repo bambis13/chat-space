@@ -1,6 +1,6 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = render partial: 'form', locals: { group: @group }
+  = render 'form-group', group: @group ,users: @users
   / = form_for @group do |f|
   /   - if @group.errors.any?
   /     .chat-group-form__errors
