@@ -2,6 +2,12 @@ $(function() {
 
   var search_list = $("#user-search-result");
   var group_user_list = $("#chat-group-user-add");
+  var cadidates_list = []
+
+  function addUserCandidatesList(userId){
+  
+  }
+
 
   function BuildUserHTML(user) {
     var html = `<div class="chat-group-user clearfix">
@@ -15,7 +21,7 @@ $(function() {
     var html = `<div class='chat-group-user clearfix js-chat-member'>
                   <input name='group[user_ids][]' type='hidden' value=" ${id} ">
                   <p class='chat-group-user__name'>${name}</p>
-                  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+                  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn data-user-id=" ${id} "'>削除</a>
                 </div>`
     group_user_list.append(html);
   }
@@ -23,34 +29,41 @@ $(function() {
   NoUserHTML = `<div class="chat-group-user clearfix">一致するユーザーはいません</div>`
 
   $("#user-search-field").on('keyup', function() {
-    var input = $("#user-search-field").val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-
-    .done(function(users) {
     $("#user-search-result").empty();
-      insertHTML = NoUserHTML;
-      if (users.length !== 0) {
-        insertHTML = '';
-        users.forEach(function(user){
-          insertHTML += BuildUserHTML(user);
-        });
-      }
-      search_list.append(insertHTML);
-    })
-    .fail(function() {
-      alert('ユーザー検索に失敗しました');
-    })
+    var input = $("#user-search-field").val();
+    if (input.length) {  
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(users) {
+        insertHTML = NoUserHTML;
+        if (users.length !== 0) {
+          insertHTML = '';
+          users.forEach(function(user){
+            insertHTML += BuildUserHTML(user);
+          });
+        }
+        search_list.append(insertHTML);
+      })
+      .fail(function() {
+        alert('ユーザー検索に失敗しました');
+      })
+    }
+    else {
+      return false
+    }
+
   });
 
   $("#user-search-result").on('click','.user-search-add',function(){
     $(this).parent().remove();
     var userId = $(this).data('user-id');
     var userName = $(this).data('user-name');
+    console.log(userId);
+    // BuildCandidatesList(userId);
     addGroupUser(userId, userName);
   });
 
@@ -59,6 +72,8 @@ $(function() {
   });
 
   $(document).on('click','.user-search-remove',function(){
+    var userId = $(this).data('user-id');
+    console.log(userId);
     $(this).parent().remove();
   });
 

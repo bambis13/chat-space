@@ -1,0 +1,4 @@
+.chat-group-form__field.clearfix
+  .chat-group-form__field--right
+    #caht-group-destroy
+      = link_to '解散する', "/groups/#{group.id}", method: :delete, class: 'chat-group-form__destroy-btn'

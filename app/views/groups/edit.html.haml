@@ -1,6 +1,8 @@
 .chat-group-form
   %h1 チャットグループ編集
   = render 'form-group', group: @group , users: @users
+  .group-destroy-btn
+    = render 'group-destroy', group: @group
 
   / %form#edit_chat_group_22.edit_chat_group{"accept-charset": "UTF-8", action: group_path, method: "patch"}
   /   %input{name: "utf8", type: "hidden", value: "✓"}/

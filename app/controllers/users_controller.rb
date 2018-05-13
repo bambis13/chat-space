@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
 def index
-    p_users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
-    @users = p_users.reject{ |user| user == current_user}
-    respond_to do |format|
-      format.html
-      format.json
-    end
+  p_users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
+  @users = p_users.reject{ |user| user == current_user}
+  respond_to do |format|
+    format.html
+    format.json
+  end
 end
 
 def edit

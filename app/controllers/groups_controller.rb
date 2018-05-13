@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :set_group, only: [:edit, :update]
+  before_action :set_group, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -28,6 +28,11 @@ class GroupsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @group.destroy
+    redirect_to root_path, notice: 'グループを削除しました'
   end
 
   private
