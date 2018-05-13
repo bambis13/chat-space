@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(message){
 
     var html_head =
-               `<div class='message' id='latest-message'>
+               `<div class='message' id='latest-message' data-message-id: "${message.id}">
                   <div class='upper-message'>
                     <div class='message__name'>
                       ${message.name}
@@ -52,6 +52,25 @@ $(function(){
       alert('error!');
     })
   });
+
+    setInterval(function() {
+    $.ajax({
+      url: location.href.json,
+    })
+    .done(function(json) {
+      var insertHTML = '';
+      json.messages.forEach(function(message) {
+        insertHTML += buildHTML(message);
+      });
+      $('.contents-message').html(insertHTML);
+    })
+    .fail(function(data) {
+      alert('自動更新に失敗しました');
+    });
+  } else() {
+    clearInterval(interval);
+   } , 5000 );
+
 });
 
 

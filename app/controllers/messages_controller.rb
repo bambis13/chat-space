@@ -3,8 +3,12 @@ class MessagesController < ApplicationController
 
 	def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
     @members = @group.members.includes(:user)
+    @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
 	end
 
   def create
