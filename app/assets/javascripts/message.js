@@ -1,36 +1,34 @@
 $(function(){
 
-  $(function(){
-    // setInterval(update, 3000)
-  });
-  function update(){
-    if($('.message').data()){
-      var message = { 'id': $('.message:last').data('id'),}
-    } else { 
-      var message = { 'id': 0,}
-    }
-    $.ajax({
-      url: location.href,
-      type: 'GET',
-      data: {message: message},
-      dataType: 'json',
-    })
-    .always(function(data){
-      if (data[0]){
-        html = buildHTML(data[0])
-        console.log(html)
-        $('.contents-message').append(html);
-        $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
-      } else {
-        console.log('ok');
+  var reloadTimer = setInterval(function(){
+    if(location.pathname.match(/messages/)){
+      if($('.message').data()){
+        var message = { 'id': $('.message:last').data('id'),}
+      } else { 
+        var message = { 'id': 0,}
       }
-    });
-  };
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: {message: message},
+        dataType: 'json',
+      })
+      .always(function(data){
+        if (data[0]){
+          html = buildHTML(data[0])
+          $('.contents-message').append(html);
+          $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+        }
+      });
+    } else {
+      clearInterval(reloadTimer);
+    }
+ },3000);
 
   function buildHTML(message){
 
     var html_head =
-               `<div class='message' id='latest-message' data-id: "${message.id}">
+               `<div class='message' id='latest-message' data-id="${message.id}">
                   <div class='upper-message'>
                     <div class='message__name'>
                       ${message.name}
