@@ -1,15 +1,42 @@
 $(function(){
 
+  $(function(){
+    // setInterval(update, 3000)
+  });
+  function update(){
+    if($('.message').data()){
+      var message = { 'id': $('.message:last').data('id'),}
+    } else { 
+      var message = { 'id': 0,}
+    }
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {message: message},
+      dataType: 'json',
+    })
+    .always(function(data){
+      if (data[0]){
+        html = buildHTML(data[0])
+        console.log(html)
+        $('.contents-message').append(html);
+        $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+      } else {
+        console.log('ok');
+      }
+    });
+  };
+
   function buildHTML(message){
 
     var html_head =
-               `<div class='message' id='latest-message' data-message-id: "${message.id}">
+               `<div class='message' id='latest-message' data-id: "${message.id}">
                   <div class='upper-message'>
                     <div class='message__name'>
                       ${message.name}
                     </div>
                     <div class='message__date'>
-                      ${message.created_at}
+                      ${message.date}
                     </div>
                   </div>
                   <div class='lower-message'>
@@ -17,7 +44,7 @@ $(function(){
                       ${message.text}
                     </div>`
     var html_image =
-                     `<div class='message__image'></div>
+                     `<div class='message__image'>
                         <img src="${message.image.url}" alt=" ">
                       </div>`
 
@@ -52,25 +79,6 @@ $(function(){
       alert('error!');
     })
   });
-
-    setInterval(function() {
-    $.ajax({
-      url: location.href.json,
-    })
-    .done(function(json) {
-      var insertHTML = '';
-      json.messages.forEach(function(message) {
-        insertHTML += buildHTML(message);
-      });
-      $('.contents-message').html(insertHTML);
-    })
-    .fail(function(data) {
-      alert('自動更新に失敗しました');
-    });
-  } else() {
-    clearInterval(interval);
-   } , 5000 );
-
 });
 
 
