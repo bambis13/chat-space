@@ -1,15 +1,42 @@
 $(function(){
 
+  var reloadTimer = setInterval(function(){
+    if(location.pathname.match(/messages/)){
+      var lastMessageId = ($('.message').data()) ? lastMessageId = $('.message:last').data('id') 
+      : lastMessageId = 0
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: {id: lastMessageId},
+        dataType: 'json',
+      })
+      .done(function(data){
+        if (data.length > 0){
+          data.forEach(function(newMessage){
+            html = buildHTML(newMessage)
+            $('.contents-message').append(html);
+            $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+          })
+        }
+      })
+      .fail(function(){
+         alert('メッセージの取得に失敗しています!')
+      })
+    } else {
+      clearInterval(reloadTimer);
+    }
+ },5000);
+
   function buildHTML(message){
 
     var html_head =
-               `<div class='message' id='latest-message'>
+               `<div class='message' id='latest-message' data-id="${message.id}">
                   <div class='upper-message'>
                     <div class='message__name'>
                       ${message.name}
                     </div>
                     <div class='message__date'>
-                      ${message.created_at}
+                      ${message.date}
                     </div>
                   </div>
                   <div class='lower-message'>
@@ -17,7 +44,7 @@ $(function(){
                       ${message.text}
                     </div>`
     var html_image =
-                     `<div class='message__image'></div>
+                     `<div class='message__image'>
                         <img src="${message.image.url}" alt=" ">
                       </div>`
 
