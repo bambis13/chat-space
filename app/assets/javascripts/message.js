@@ -3,27 +3,32 @@ $(function(){
   var reloadTimer = setInterval(function(){
     if(location.pathname.match(/messages/)){
       if($('.message').data()){
-        var message = { 'id': $('.message:last').data('id'),}
+        var lastMessageId = $('.message:last').data('id')
       } else { 
-        var message = { 'id': 0,}
+        var lastMessageId = 0
       }
       $.ajax({
         url: location.href,
         type: 'GET',
-        data: {message: message},
+        data: {id: lastMessageId},
         dataType: 'json',
       })
-      .always(function(data){
-        if (data[0]){
-          html = buildHTML(data[0])
-          $('.contents-message').append(html);
-          $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+      .done(function(data){
+        if (data.length > 0){
+          data.forEach(function(newMessage){
+            html = buildHTML(newMessage)
+            $('.contents-message').append(html);
+            $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+          })
         }
-      });
+      })
+      .fail(function(){
+         alert('メッセージの取得に失敗しています!')
+      })
     } else {
       clearInterval(reloadTimer);
     }
- },3000);
+ },5000);
 
   function buildHTML(message){
 
