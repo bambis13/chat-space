@@ -2,11 +2,8 @@ $(function(){
 
   var reloadTimer = setInterval(function(){
     if(location.pathname.match(/messages/)){
-      if($('.message').data()){
-        var lastMessageId = $('.message:last').data('id')
-      } else { 
-        var lastMessageId = 0
-      }
+      var lastMessageId = ($('.message').data()) ? lastMessageId = $('.message:last').data('id') 
+      : lastMessageId = 0
       $.ajax({
         url: location.href,
         type: 'GET',
