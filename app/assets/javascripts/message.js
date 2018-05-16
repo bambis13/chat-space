@@ -66,6 +66,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      console.log(data.image)
       var html = buildHTML(data);
       $('.contents-message').append(html);
       $('form')[0].reset();
