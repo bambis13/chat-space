@@ -77,6 +77,7 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave'
+gem 'fog'
 gem 'mini_magick'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-ui-rails'

@@ -19,3 +19,4 @@
 .byebug_history
 /public/uploads/message/image
 /public/uploads/tmp
+config/secrets.yml
