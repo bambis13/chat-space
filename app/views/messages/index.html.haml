@@ -2,15 +2,19 @@
 %html
   %head
     %header
-      = render partial: "messages/flash"
+      = render 'messages/flash'
     .body
-      .side-block
-        = render partial: "messages/side-block"
-      .contents
-        .contents-headers
-          = render partial: 'messages/header', collection: @members
-        .border
-        .contents-message
+      .top-contents
+        .top-contents__left
+          = render 'users/top-contents__left'
+        .top-contents__right
+          = render 'messages/top-contents__right'
+      .border
+      .middle-contents
+        .middle-contents__left
+          = render partial: 'groups/group',collection: @groups
+        .middle-contents__right
           = render partial: 'message', collection: @messages
-        .contents-form
-          = render partial: "messages/form"
+      .bottom-contents
+        .bottom-contents__left
+        = render 'messages/form'

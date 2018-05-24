@@ -1,0 +1,11 @@
+.top-contents__right__current-group
+  .top-contents__right__current-group__name
+    = @group.name
+
+  .top-contents__right__current-group__member
+    = "Member :"
+    - @members.each do |member|
+      = member.user[:name]
+.top-contents__right__edit
+  = link_to "Edit", edit_group_path(@group), class: 'top-contents__right__edit-btn'
+

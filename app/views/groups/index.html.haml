@@ -1,2 +1,10 @@
 .body
-  = render 'messages/side-block'
+  .top-contents
+    .top-contents__left
+      = render "users/top-contents__left"
+    .top-contents__right
+  .middle-contents
+    .middle-contents__left
+      = render partial: "group",collection: @groups
+  .bottom-contents
+    .bottom-contents__left

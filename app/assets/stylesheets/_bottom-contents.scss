@@ -1,9 +1,26 @@
-.form{
+.bottom-contents{
+  height: 100px;
+  &__left{
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;
+    float: left;
+  }
+  &__right{
+    float: right;
+    height: calc(100% - 40px);
+    width: calc(100% - 380px);
+    padding: 20px 40px;
+    background-color: $form-gray;
+    // display: flex;
+    vertical-align: center;
+    // align-items: center;
     &__text-field{
       font-size: 16px;
       background-color: $white;
       color: $black;
       height: 50px;
+      min-width: 200px;
       width: calc(100% - 145px);
       padding: 0 45px 0 20px;
       float: left;
@@ -14,13 +31,12 @@
       width: 40px;
       z-index: 0;
       position: absolute;
-      bottom: 20px;
       right: 120px;
       padding: auto;
       text-align: center;
     }
     .image-icon{
-        color: $black;
+        color: gray;
         line-height: 50px;
     }
     .hidden{
@@ -34,4 +50,5 @@
       background-color:  $light-blue;
       border: none;
     }
+  }
 }

@@ -1,0 +1,60 @@
+.top-contents{
+  height: 100px;
+  width: 100vw;
+  clear: both;
+  &__right{
+    height: 100px;
+    width: calc(100vw - 380px);
+    padding: 0 40px;
+    float: right;
+    display: flex;
+    align-items: center;
+    &__current-group{
+      width: calc(100% - 100px);
+      min-width: 300px;
+      &__name{
+        color: $black;
+        font-weight: bold;
+        width: calc(100% - 200px);
+        padding: 15px 0 5px 0;
+        font-size: 20px;
+      }
+      &__member{
+        width: calc(100% - 200px);
+        color: $font-gray;
+        font-size: 12px;
+      }
+    }
+    &__edit{
+      height: 40px;
+      border: solid 2px $light-blue;
+      float: right;
+    }
+    &__edit-btn{
+      text-decoration: none;
+      padding: 0 20px;
+      line-height: 40px;
+      color: $light-blue;
+    }
+  }
+  &__left{
+    height: 100%;
+    width: 260px;
+    background-color: #253141;
+    padding: 0 20px;
+    display: inline-block;
+    &__user-name{
+      color: $white;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 100px;
+      float: left;
+    }
+    .icon{
+    color: $white;
+    float: right;
+    line-height: 100px;
+    padding: 0 5px;
+    }
+  }
+}
