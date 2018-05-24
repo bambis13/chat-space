@@ -1,7 +1,6 @@
 .bottom-contents__right
   = form_for [@group, @message] do |f|
     = f.text_field :text, class: 'bottom-contents__right__text-field', placeholder: 'type a message'
-    / .bottom-contents__right__form-mask
     = f.label :image, class: 'bottom-contents__right__image-label' do
       = fa_icon 'picture-o', class: 'image-icon fa-lg'
       = f.file_field :image, class: 'hidden upload_image'
