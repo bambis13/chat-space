@@ -1,10 +1,15 @@
-.body
-  .top-contents
-    .top-contents__left
-      = render "users/top-contents__left"
-    .top-contents__right
-  .middle-contents
-    .middle-contents__left
-      = render partial: "group",collection: @groups
-  .bottom-contents
-    .bottom-contents__left
+!!!
+%html
+  %head
+    %header
+      = render 'messages/flash'
+    .body
+      .top-contents
+        .top-contents__left
+          = render "users/top-contents__left"
+        .top-contents__right
+      .middle-contents
+        .middle-contents__left
+          = render partial: "group",collection: @groups
+      .bottom-contents
+        .bottom-contents__left

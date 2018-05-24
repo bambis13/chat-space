@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
        format.json 
-       format.html { redirect_to group_messages_path, notice: 'メッセージを投稿しました。' }
+       format.html { redirect_to group_messages_path }
       end
     else
       @messages = @group.messages.includes(:user)
