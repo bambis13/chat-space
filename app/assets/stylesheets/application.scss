@@ -1,15 +1,12 @@
-@import "font-awesome";
-@import "./reset";
-@import "./variable";
-@import "./side-block";
-@import "./header";
-@import "./message";
-@import "./form";
-@import "./user";
-@import "./flash";
-@import "./groups";
-
-
+@import 'font-awesome';
+@import './reset';
+@import './variable';
+@import './user';
+@import './groups';
+@import './flash';
+@import './top-contents';
+@import './middle-contents';
+@import './bottom-contents';
 
 // .notice{
 //   width: 100vw;
@@ -28,53 +25,10 @@
   height: 100vh;
 }
 
-.side-block{
-  height: 100vh;
-  width: 300px;
-  background-color: #2f3e51;
-  position: absolute;
-  left: 0;
-  overflow-y: scroll;
-}
-
-.contents{
-  height: 100vh;
-  width: calc(100vw - 300px);
-  background-color: $back-gray;
-  float: right;
-  overflow-y:scroll;
-}
-
-.contents-header{
-  height: 100px;
-  background-color: $white;
-  padding:0 40px;
-  min-width: 500px;
-  position: absolute;
-  right:0;
-  left:300px;
-}
-
-.contents-message{
-  padding-top: 130px;
-  padding-bottom: 80px;
-}
-
-.contents-form{
-    height: 50px;
-    width: calc(100% - 380px);
-    padding: 20px 40px;
-    background-color: $form-gray;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
 .border{
   border-bottom: solid 2px #eeeeee;
   clear: both;
-  margin-bottom: 6px;
-  }
+}
 
 i{
   color: $white;

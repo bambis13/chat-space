@@ -2,7 +2,7 @@ $(function(){
 
   var reloadTimer = setInterval(function(){
     if(location.pathname.match(/messages/)){
-      var lastMessageId = ($('.message').data()) ? lastMessageId = $('.message:last').data('id') 
+      var lastMessageId = ($('.middle-contents__right__message').data()) ? lastMessageId = $('.middle-contents__right__message:last').data('id') 
       : lastMessageId = 0
       $.ajax({
         url: location.href,
@@ -14,8 +14,8 @@ $(function(){
         if (data.length > 0){
           data.forEach(function(newMessage){
             html = buildHTML(newMessage)
-            $('.contents-message').append(html);
-            $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+            $('.middle-contents__right').append(html);
+            $('.middle-contents__right').animate({scrollTop: $('.middle-contents__right')[0].scrollHeight}, 'fast');
           })
         }
       })
@@ -30,21 +30,21 @@ $(function(){
   function buildHTML(message){
 
     var html_head =
-               `<div class='message' id='latest-message' data-id="${message.id}">
-                  <div class='upper-message'>
-                    <div class='message__name'>
+               `<div class='middle-contents__right__message' id='latest-message' data-id="${message.id}">
+                  <div class='middle-contents__right__message upper'>
+                    <div class='middle-contents__right__message__name'>
                       ${message.name}
                     </div>
-                    <div class='message__date'>
+                    <div class='middle-contents__right__message__date'>
                       ${message.date}
                     </div>
                   </div>
-                  <div class='lower-message'>
-                    <div class='message__text'>
+                  <div class='middle-contents__right__message lower'>
+                    <div class='middle-contents__right__message__text'>
                       ${message.text}
                     </div>`
     var html_image =
-                     `<div class='message__image'>
+                     `<div class='middle-contents__right__message__image'>
                         <img src="${message.image.url}" alt=" ">
                       </div>`
 
@@ -68,15 +68,15 @@ $(function(){
     .done(function(data){
       console.log(data.image)
       var html = buildHTML(data);
-      $('.contents-message').append(html);
+      $('.middle-contents__right').append(html);
       $('form')[0].reset();
-      $('.form__submit').prop("disabled", false);
-      $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight}, 'fast');
+      $('.bottom-contents__right__submit').prop("disabled", false);
+      $('.middle-contents__right').animate({scrollTop: $('.middle-contents__right')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      $('.form__text-field').val("");
+      $('.bottom-contents__right__text-field').val("");
       $('.upload_image').val("");
-      $('.form__submit').prop("disabled", false);
+      $('.bottom-contents__right__submit').prop("disabled", false);
       alert('error!');
     })
   });

@@ -1,0 +1,8 @@
+- if group.present?
+  .middle-contents__left__group
+    = link_to group_messages_path(group) do
+      .middle-contents__left__group__name
+        = group.name
+      .middle-contents__left__group__text
+        = group.show_last_message
+

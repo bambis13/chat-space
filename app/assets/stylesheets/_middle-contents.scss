@@ -1,0 +1,53 @@
+.middle-contents{
+  clear: both;
+  height: calc(100vh - 200px);
+  &__left{
+    background-color: #2f3e51;
+    overflow-y:scroll;
+    height: 100%;
+    width: 260px;
+    padding: 0 20px;
+    float: left;
+    a{
+      text-decoration: none;
+      color: $white;
+    }
+    &__group{
+      padding: 40px 20px;
+      &__name{
+        font-size: 15px;
+        padding-bottom: 5px;
+      }
+      &__text{
+        font-size: 11px;
+      }
+    }
+  }
+
+  &__right{
+    background-color: $back-gray;
+    margin-left: 300px;
+    height: 100%;
+    overflow-y:scroll;
+    &__message{
+      color: $black;
+      padding: 20px;
+      &__name{
+      font-size: 16px;
+      font-weight: bold;
+      display:inline;
+      margin-right: 10px;
+      }
+      &__date{
+      font-size: 12px;
+      color: $font-gray;
+      display:inline;
+      }
+      &__text{
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
